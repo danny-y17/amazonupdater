@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<form action= "{% url 'upload_csv' %}" method="POST" enctype="multipart/form-data" class="form-horizontal"> 
+    {% csrf_token %}
+    <div class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file1" id="csv_file1" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file...
+                </span>
+              </span>
+              <span class="file-name">
+              </span>
+        </label>
+    </div>
+
+    <div class="file is-large is-centered has-name">  
+        <label class="file-label">
+            <input type="file" name="csv_file2" id="csv_file2" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choose a file...
+                </span>
+              </span>
+              <span class="file-name">
+              </span>
+        </label>
+    </div>
+
+    <div class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file3" id="csv_file3" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choose a file...
+                </span>
+              </span>
+              <span class="file-name">
+                
+              </span>
+        </label>
+    </div>
+
+    <div class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file4" id="csv_file4" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choose a file...
+                </span>
+              </span>
+              <span class="file-name">
+                
+              </span>
+        </label>
+    </div>
+
+    <div class="form-group">                    
+        <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3" style="text-align: center; border: 1px;">
+             <button class="button is-normal is-success is-hovered is-centered"> <span class="glyphicon glyphicon-upload" style="margin:right 20px;;"></span>Upload </button>
+        </div> 
+    </div>
+    </form>
+</html>
