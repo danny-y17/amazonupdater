@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+  background-color: dimgrey;
+  margin: auto 10px;
+  width: auto;
+  height: 2000px;
+}
+#file1_upload {
+  color: #333333;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 490px;
+  margin: auto;
+  top: 500px;
+}
+#file2_upload {
+  color: #333333;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 490px;
+  margin: auto;
+  top: 500px;
+}
+#file3_upload {
+  color: #333333;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 490px;
+  margin: auto;
+  top: 500px;
+}
+#file4_upload {
+  color: #333333;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 490px;
+  margin: auto;
+  top: 500px;
+}
+.file-name {
+  background-color: white;
+}
+title {
+  text-align: center;
+  color: black;
+}
+head {
+  text-align: center;
+  color: black;
+}
+.button {
+  cursor: pointer;
+  font-weight: 400;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 550px;
+  margin: auto;
+  top: 520px;
+  left: 48%;
+}
+
+
+</style>
+<head>
+<title>
+  amazonupdater
+</title>
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<form action= "{% url 'upload_csv' %}" method="POST" enctype="multipart/form-data" class="form-horizontal"> 
+    {% csrf_token %}
+    <div id="file1_upload" class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file1" id="csv_file1" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Bulk item file...
+                </span>
+              </span>
+              <span class="file-name">
+                No file uploaded...
+              </span>
+        </label>
+    </div>
+    <script>
+      const fileInput1 = document.querySelector('#file1_upload input[type=file]');
+      fileInput1.onchange = () => {
+        if (fileInput1.files.length > 0) {
+          const fileName1 = document.querySelector('#file1_upload .file-name');
+          fileName1.textContent = fileInput1.files[0].name;
+        }
+      }
+    </script>
+
+    <div id = "file2_upload" class="file is-large is-centered has-name">  
+        <label class="file-label">
+            <input type="file" name="csv_file2" id="csv_file2" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Buy box file...
+                </span>
+              </span>
+              <span class="file-name">
+                No file uploaded...
+              </span>
+        </label>
+    </div>
+    <script>
+      const fileInput2 = document.querySelector('#file2_upload input[type=file]');
+      fileInput2.onchange = () => {
+        if (fileInput2.files.length > 0) {
+          const fileName2 = document.querySelector('#file2_upload .file-name');
+          fileName2.textContent = fileInput2.files[0].name;
+        }
+      }
+    </script>
+
+    <div id="file3_upload" class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file3" id="csv_file3" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Competitors file...
+                </span>
+              </span>
+              <span class="file-name">
+                No file uploaded...
+              </span>
+        </label>
+    </div>
+    <script>
+      const fileInput3 = document.querySelector('#file3_upload input[type=file]');
+      fileInput3.onchange = () => {
+        if (fileInput3.files.length > 0) {
+          const fileName3 = document.querySelector('#file3_upload .file-name');
+          fileName3.textContent = fileInput3.files[0].name;
+        }
+      }
+    </script>
+
+    <div id="file4_upload" class="file is-large is-centered has-name">
+        <label class="file-label">
+            <input type="file" name="csv_file4" id="csv_file4" required="True" class="file-input">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Category lookup file...
+                </span>
+              </span>
+              <span class="file-name">
+                No file uploaded...
+              </span>
+        </label>
+    </div>
+    <script>
+      const fileInput4 = document.querySelector('#file4_upload input[type=file]');
+      fileInput4.onchange = () => {
+        if (fileInput4.files.length > 0) {
+          const fileName4 = document.querySelector('#file4_upload .file-name');
+          fileName4.textContent = fileInput4.files[0].name;
+        }
+      }
+    </script>
+
+    <div class="form-group">                    
+        <div id="upload_button" class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3">
+             <button class="button is-large is-success is-centered"> <span class="glyphicon glyphicon-upload";"></span>Upload </button>
+        </div> 
+    </div>
+    </form>
+</html>
